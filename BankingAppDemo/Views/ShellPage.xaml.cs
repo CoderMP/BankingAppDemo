@@ -76,7 +76,7 @@ namespace BankingAppDemo.Views
         {
             if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 6))
             {
-                navigationView.IsBackButtonVisible = NavigationViewBackButtonVisible.Collapsed;
+                //navigationView.IsBackButtonVisible = NavigationViewBackButtonVisible.Collapsed;
             }
         }
 

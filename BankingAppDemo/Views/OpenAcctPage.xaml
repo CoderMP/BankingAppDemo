@@ -6,13 +6,43 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
-    <Grid
-        x:Name="ContentArea"
-        Margin="{StaticResource MediumLeftRightMargin}">
-        <Grid
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
-                Place your content here.-->
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+        <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="_txtAcctNo" VerticalAlignment="Top" HorizontalAlignment="Stretch" Header="Account Number" PlaceholderText="Enter Account Number" FontSize="18" Margin="10,20,10,0" InputScope="Number"/>
+            <TextBox x:Name="_txtBxAcctName" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Header="Account Holder Name" PlaceholderText="Enter Account Holder Name" FontSize="18" Margin="10,20,10,0"/>
+            <Grid Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <ComboBox x:Name="_cmbAcctType" VerticalAlignment="Center" HorizontalAlignment="Center" Header="Account Type" PlaceholderText="Select an Account Type" FontSize="18" Margin="0,0,0,25">
+                    <ComboBoxItem x:Name="_cmbRegular">Regular</ComboBoxItem>
+                    <ComboBoxItem x:Name="_cmbChequing">Chequing</ComboBoxItem>
+                    <ComboBoxItem x:Name="_cmbSavings">Savings</ComboBoxItem>
+                </ComboBox>
+                <TextBox x:Name="_txtBxIntrRate" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Header="Interest Rate" PlaceholderText="Enter Interest Rate (%)" FontSize="18" InputScope="Number" Margin="0,0,0,25"/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="_txtBxInitBalance" VerticalAlignment="Center" HorizontalAlignment="Center" Header="Initial Balance" PlaceholderText="Enter Initial Account Balance" FontSize="18" InputScope="Number" Margin="0,0,0,25"/>
+                <Button x:Name="_btnCreateAcct" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Content="Create Account" Margin="0,5,0,0"/>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

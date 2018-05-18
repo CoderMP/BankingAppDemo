@@ -22,11 +22,11 @@
             Or to use an IconElement instead of a Symbol see https://github.com/Microsoft/WindowsTemplateStudio/blob/master/docs/projectTypes/navigationpane.md
             Edit String/en-US/Resources.resw: Add a menu item title for each page
             -->
-            <NavigationViewItem x:Uid="Shell_Home" Icon="Document" helpers:NavHelper.NavigateTo="views:HomePage" />
-            <NavigationViewItem x:Uid="Shell_OpenAcct" Icon="Document" helpers:NavHelper.NavigateTo="views:OpenAcctPage" />
-            <NavigationViewItem x:Uid="Shell_CloseAcct" Icon="Document" helpers:NavHelper.NavigateTo="views:CloseAcctPage" />
-            <NavigationViewItem x:Uid="Shell_RecTransaction" Icon="Document" helpers:NavHelper.NavigateTo="views:RecTransactionPage" />
-            <NavigationViewItem x:Uid="Shell_CancelTransaction" Icon="Document" helpers:NavHelper.NavigateTo="views:CancelTransactionPage" />
+            <NavigationViewItem x:Uid="Shell_Home" Icon="Home" helpers:NavHelper.NavigateTo="views:HomePage" />
+            <NavigationViewItem x:Uid="Shell_OpenAcct" Icon="Add" helpers:NavHelper.NavigateTo="views:OpenAcctPage" />
+            <NavigationViewItem x:Uid="Shell_CloseAcct" Icon="Remove" helpers:NavHelper.NavigateTo="views:CloseAcctPage" />
+            <NavigationViewItem x:Uid="Shell_RecTransaction" Icon="Edit" helpers:NavHelper.NavigateTo="views:RecTransactionPage" />
+            <NavigationViewItem x:Uid="Shell_CancelTransaction" Icon="Cancel" helpers:NavHelper.NavigateTo="views:CancelTransactionPage" />
         </NavigationView.MenuItems>
         <NavigationView.HeaderTemplate>
             <DataTemplate>

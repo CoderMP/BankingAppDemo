@@ -6,13 +6,36 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
-    <Grid
-        x:Name="ContentArea"
-        Margin="{StaticResource MediumLeftRightMargin}">
-        <Grid
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
-                Place your content here.-->
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+        <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+
+            <ListView x:Name="_lstAccounts" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Header="Account List" FontSize="18" Margin="10,10,10,10">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock x:Name="_txtAcctName" Text="{Binding AccountName}"/>
+                            <TextBlock x:Name="_txtAcctNumber" Text="{Binding AccountNumber}"/>
+                            <TextBlock x:Name="_txtAcctBalance" Text="{Binding AccountBalance}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView x:Name="_lstTransactions" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Header="Transaction List" FontSize="18" Margin="10,10,10,10">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock x:Name="_txtTransType" Text="{Binding Type}"/>
+                            <TextBlock x:Name="_txtTransAmmt" Text="{Binding Amount}"/>
+                            <TextBlock x:Name="_txtOrigBalance" Text="{Binding OriginalBalance}"/>
+                            <TextBlock x:Name="_txtNewBalance" Text="{Binding NewBalance}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
     </Grid>
 </Page>
